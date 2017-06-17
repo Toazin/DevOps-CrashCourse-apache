@@ -16,3 +16,11 @@ end
 describe port(80), :skip do
   it { should_not be_listening }
 end
+
+describe file('/var/www/html/index.html') do
+ it { should be_file }
+end
+
+describe file('/var/www/html/index.html') do
+ it { should be_owned_by 'root' }
+end
