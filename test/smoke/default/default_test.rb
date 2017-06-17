@@ -7,13 +7,13 @@
 
 unless os.windows?
   # This is an example test, replace with your own test.
-  describe user('root'), :skip do
+  describe user('root') do
     it { should exist }
   end
 end
 
 # This is an example test, replace it with your own test.
-describe port(80), :skip do
+describe port(80) do
   it { should_not be_listening }
 end
 
@@ -23,4 +23,8 @@ end
 
 describe file('/var/www/html/index.html') do
  it { should be_owned_by 'root' }
+end
+
+describe command('curl localhost') do
+   its('stdout') { should eq '<h1> Hello, world_ </h1>' }
 end
