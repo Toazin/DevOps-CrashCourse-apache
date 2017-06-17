@@ -14,7 +14,7 @@ end
 
 # This is an example test, replace it with your own test.
 describe port(80) do
-  it { should_not be_listening }
+  it { should be_listening }
 end
 
 describe file('/var/www/html/index.html') do
